@@ -46,7 +46,8 @@ public class Main extends KnpMethods{
                         System.out.println("\u001B[31m" + "Bohužel, prohrál jsi, ale nevzdávej se!" + "\u001B[0m");
                         tempComputerWins++;
                     }
-                    if (tempPlayerWins + tempComputerWins == winRounds) break;
+                    System.out.printf("\nPrůběžné skóre bodů: \nUživatel - %d\nPočítač - %d%n", tempPlayerWins, tempComputerWins);
+                    if (tempPlayerWins == winRounds || tempComputerWins == winRounds) break;
                 }
                 Thread.sleep(1000);
                 if (tempPlayerWins < tempComputerWins) computerWins++;
@@ -57,7 +58,7 @@ public class Main extends KnpMethods{
                     System.out.println("\u001B[33m" + "\nProtože by to byla remíza dáme ještě jedno kolo." + "\u001B[0m");
                     --i;
                 }
-                System.out.printf("\nPrůběžné skóre: \nUživatel - %d\nPočítač - %d%n", playerWins, computerWins);
+                System.out.printf("\nPrůběžné skóre výher: \nUživatel - %d\nPočítač - %d%n", playerWins, computerWins);
             }
             continuePlaying = askToContinue();
             System.out.println();
