@@ -48,6 +48,7 @@ public class Main extends KnpMethods{
                     }
                     if (tempPlayerWins + tempComputerWins == winRounds) break;
                 }
+                Thread.sleep(1000);
                 if (tempPlayerWins < tempComputerWins) computerWins++;
                 else playerWins++;
                 if(playerWins > computerWins) PlaySounds.playSound("drumWin.wav");
@@ -62,5 +63,6 @@ public class Main extends KnpMethods{
             System.out.println();
         } while (continuePlaying);
         System.out.println("Děkuji za vyzkoušení mé hry. :D");
+        System.exit(0);
     }
 }

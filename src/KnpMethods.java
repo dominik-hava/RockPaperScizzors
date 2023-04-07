@@ -13,7 +13,7 @@ public class KnpMethods {
     protected static int getRounds() {
         int rounds = 0;
         do {
-            System.out.println("Zadej kolik chcete hrát kol:");
+            System.out.print("Zadej kolik chcete hrát kol: ");
             try {
                 rounds = scanner.nextInt();
                 scanner.nextLine();
@@ -27,7 +27,7 @@ public class KnpMethods {
     protected static int getWinRounds() {
         int rounds = 0;
         do {
-            System.out.println("Zadej na kolik vítězných chcete hrát:");
+            System.out.print("Zadej na kolik vítězných chcete hrát: ");
             try {
                 rounds = scanner.nextInt();
                 scanner.nextLine();
@@ -59,8 +59,12 @@ public class KnpMethods {
         dialog.requestFocus();
         dialog.setVisible(true);
 
-        int answer = Integer.parseInt((String) pane.getValue());
-        return answer == JOptionPane.YES_OPTION;
+        Object value = pane.getValue();
+        if (value instanceof Integer) {
+            return ((Integer) value) == JOptionPane.YES_OPTION;
+        } else {
+            return false;
+        }
     }
     protected static String getSentence(String input1, String input2) {
         String sentence = "";
